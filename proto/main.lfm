@@ -1,0 +1,90 @@
+object Form1: TForm1
+  Left = 1932
+  Height = 1019
+  Top = 0
+  Width = 1450
+  Caption = 'Form1'
+  ClientHeight = 994
+  ClientWidth = 1450
+  Menu = MainMenu
+  OnCreate = FormCreate
+  LCLVersion = '2.0.12.0'
+  object OpenBox: TListBox
+    Left = 40
+    Height = 56
+    Top = 192
+    Width = 160
+    Anchors = [akLeft]
+    ItemHeight = 0
+    OnSelectionChange = OpenBoxSelectionChange
+    ScrollWidth = 158
+    TabOrder = 0
+    TopIndex = -1
+  end
+  object ImageHolder: TImage
+    Left = 631
+    Height = 800
+    Top = 40
+    Width = 600
+    Constraints.MaxHeight = 800
+    Constraints.MaxWidth = 600
+    Proportional = True
+  end
+  object btnSaveOne: TButton
+    Left = 232
+    Height = 25
+    Top = 432
+    Width = 75
+    Caption = 'SaveOne'
+    OnClick = btnSaveOneClick
+    TabOrder = 1
+  end
+  object btnSaveAll: TButton
+    Left = 56
+    Height = 25
+    Top = 432
+    Width = 75
+    Caption = 'SaveAll'
+    OnClick = btnSaveAllClick
+    TabOrder = 2
+  end
+  object btnClear: TButton
+    Left = 165
+    Height = 25
+    Top = 518
+    Width = 75
+    Caption = 'Clear'
+    OnClick = btnClearClick
+    TabOrder = 3
+  end
+  object btnExit: TButton
+    Left = 736
+    Height = 25
+    Top = 916
+    Width = 75
+    Caption = 'Exit'
+    OnClick = btnExitClick
+    TabOrder = 4
+  end
+  object MainMenu: TMainMenu
+    Left = 26
+    Top = 16
+    object Document: TMenuItem
+      Caption = '&Document'
+      object mnuNew: TMenuItem
+        Caption = '&New    TODO'
+      end
+      object mnuOpen: TMenuItem
+        Caption = '&Open'
+        OnClick = mnuOpenClick
+      end
+    end
+    object mnuQuit: TMenuItem
+      Caption = '&Quit'
+    end
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Left = 528
+    Top = 376
+  end
+end
