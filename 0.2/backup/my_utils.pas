@@ -13,7 +13,6 @@ function my_CreateFolder: String;
 function my_CreateFileName(const folderPath: String): String;
 
 // Image related stuff
-function my_GetImageFromTwain: TImage;
 function my_SaveImageToFile(const folderPath: String; const img: TImage): Boolean;
 
 

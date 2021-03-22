@@ -15,9 +15,11 @@ type
   TForm1 = class(TForm)
     btnAcquire: TButton;
     btnSave: TButton;
+    btnExit: TButton;
     imgHolder: TImage;
     srcLabel: TLabel;
     procedure btnAcquireClick(Sender: TObject);
+    procedure btnExitClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Idle;
@@ -47,9 +49,8 @@ begin
   srcLabel.Visible := True;
   imgHolder.AutoSize := True;
   btnSave.Visible := False;
-  if Status then begin
-    srcLabel.Caption := '';
-  end;
+  if Assigned(Twain.SelectedSource) then
+    srcLabel.Caption := Twain.SelectedSource.ProductName;
 end;
 
 procedure TForm1.imgHolderPictureChanged(Sender: TObject);
@@ -60,33 +61,19 @@ end;
 
 procedure TForm1.btnAcquireClick(Sender: TObject);
 begin
-  //Create Twain
-  if Twain = nil then begin
-    Twain := TDelphiTwain.Create;
-    Twain.OnTwainAcquire := @TwainTwainAcquire;
+  if Assigned(Twain.SelectedSource) then begin
+    //Load source, select transference method and enable (display interface)}
+    Twain.SelectedSource.Loaded := TRUE;
+    Twain.SelectedSource.ShowUI := False;//display interface
+    Twain.SelectedSource.Enabled := True;
   end;
+end;
 
-  //Load Twain Library dynamically
-  if Twain.LoadLibrary then
-  begin
-    //Load source manager
-    Twain.SourceManagerLoaded := True;
-
-    //Allow user to select source -> only the first time
-    if not Assigned(Twain.SelectedSource) then begin
-      Twain.SelectSource;
-      srcLabel.Caption := Twain.SelectedSource.ProductName;
-    end;
-    if Assigned(Twain.SelectedSource) then begin
-      //Load source, select transference method and enable (display interface)}
-      Twain.SelectedSource.Loaded := TRUE;
-      Twain.SelectedSource.ShowUI := False;//display interface
-      Twain.SelectedSource.Enabled := True;
-    end;
-  end else begin
-    ShowMessage('Twain is not installed.');
-  end;
+procedure TForm1.btnExitClick(Sender: TObject);
+begin
+  imgHolder.Free;
   Twain.SourceManagerLoaded := False;
+  Close;
 end;
 
 procedure TForm1.btnSaveClick(Sender: TObject);
@@ -99,11 +86,23 @@ begin
   finally
     Idle;
   end;
-
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  //Create Twain
+  if Twain = nil then begin
+    Twain := TDelphiTwain.Create;
+    Twain.OnTwainAcquire := @TwainTwainAcquire;
+  end;
+
+  if not Twain.LoadLibrary then
+    Close;
+
+  //Load source manager
+  Twain.SourceManagerLoaded := True;
+  Twain.SelectSource;
+
   Idle;
 end;
 

@@ -19,8 +19,8 @@
         <ComponentName Value="Form1"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="24"/>
-        <CursorPos X="27" Y="47"/>
+        <TopLine Value="60"/>
+        <CursorPos X="3" Y="66"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -28,8 +28,7 @@
       <Unit2>
         <Filename Value="my_utils.pas"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="22"/>
-        <CursorPos X="23" Y="15"/>
+        <CursorPos X="29" Y="35"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -41,7 +40,7 @@
         <UsageCount Value="20"/>
       </Unit3>
     </Units>
-    <JumpHistory Count="13" HistoryIndex="12">
+    <JumpHistory Count="18" HistoryIndex="17">
       <Position1>
         <Filename Value="main.pas"/>
       </Position1>
@@ -93,6 +92,26 @@
         <Filename Value="main.pas"/>
         <Caret Line="93" Column="33" TopLine="73"/>
       </Position13>
+      <Position14>
+        <Filename Value="main.pas"/>
+        <Caret Line="48" Column="27" TopLine="25"/>
+      </Position14>
+      <Position15>
+        <Filename Value="main.pas"/>
+        <Caret Line="105" Column="3" TopLine="77"/>
+      </Position15>
+      <Position16>
+        <Filename Value="main.pas"/>
+        <Caret Line="112" Column="3" TopLine="79"/>
+      </Position16>
+      <Position17>
+        <Filename Value="main.pas"/>
+        <Caret Line="85" Column="38" TopLine="61"/>
+      </Position17>
+      <Position18>
+        <Filename Value="main.pas"/>
+        <Caret Line="66" Column="4" TopLine="49"/>
+      </Position18>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

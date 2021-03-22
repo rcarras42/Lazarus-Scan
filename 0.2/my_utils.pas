@@ -31,8 +31,8 @@ begin
     CreateDir(base);
 
   dirs := FindAllDirectories(base, False);
-  if dirs.Count > 0 then begin                                                    // A bit of sanitizing
-    for i := (dirs.Count - 1) downto 0 do                                         // Keep last one(just in case...)
+  if dirs.Count > 1 then begin                                                    // A bit of sanitizing
+    for i := (dirs.Count - 1) downto 1 do                                         // Keep last one(just in case...)
         DeleteDirectory(dirs[i],False);                                           // Not sure about the downto will find out soon
   end;
   my_CreatePathName := Concat(base ,IntToStr(dirs.Count));
