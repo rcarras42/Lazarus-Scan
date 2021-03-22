@@ -1,0 +1,47 @@
+object Form1: TForm1
+  Left = -1530
+  Height = 1048
+  Top = 0
+  Width = 1101
+  Caption = 'Form1'
+  ClientHeight = 1048
+  ClientWidth = 1101
+  OnCreate = FormCreate
+  LCLVersion = '2.0.12.0'
+  object btnAcquire: TButton
+    Left = 944
+    Height = 43
+    Top = 992
+    Width = 142
+    Caption = 'Nouvelle Numerisation'
+    OnClick = btnAcquireClick
+    TabOrder = 0
+  end
+  object imgHolder: TImage
+    Left = 0
+    Height = 1040
+    Top = 0
+    Width = 880
+    OnPictureChanged = imgHolderPictureChanged
+  end
+  object srcLabel: TLabel
+    Left = 944
+    Height = 20
+    Top = 376
+    Width = 142
+    Caption = 'Scanner non detecte'
+    Font.Height = 20
+    Font.Style = [fsBold, fsUnderline]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnSave: TButton
+    Left = 944
+    Height = 41
+    Top = 936
+    Width = 142
+    Caption = 'Sauvegarder'
+    OnClick = btnSaveClick
+    TabOrder = 1
+  end
+end
