@@ -29,6 +29,7 @@ type
 
     procedure TwainTwainAcquire(Sender: TObject; const {%H-}Index: Integer;
       Image: TBitmap; var Cancel: Boolean);
+
   public
 
   end;

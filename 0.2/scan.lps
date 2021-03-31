@@ -19,8 +19,7 @@
         <ComponentName Value="Form1"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="36"/>
-        <CursorPos X="3" Y="54"/>
+        <CursorPos X="17" Y="33"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -28,7 +27,8 @@
       <Unit2>
         <Filename Value="my_utils.pas"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="29" Y="35"/>
+        <TopLine Value="28"/>
+        <CursorPos X="23" Y="57"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit2>

@@ -64,7 +64,7 @@ begin
   if Assigned(Twain.SelectedSource) then begin
     //Load source, select transference method and enable (display interface)}
     Twain.SelectedSource.Loaded := TRUE;
-    Twain.SelectedSource.ShowUI := False;//display interface
+    Twain.SelectedSource.ShowUI := False;//DO NOT display interface
     Twain.SelectedSource.Enabled := True;
   end;
 end;
