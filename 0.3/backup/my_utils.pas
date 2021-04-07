@@ -9,11 +9,9 @@ uses
 
 // File/Folder management
 procedure my_ClearDir(const dir: String);
-function my_CreatePathName: String;
-function my_CreateFolder: String;
+function my_CreatePathName(const base: String): String;
+function my_CreateFolder(const base: String): String;
 function my_CreateFileName(const folderPath: String): String;
-
-
 
 implementation
 
@@ -23,21 +21,18 @@ var
   dirs: TStringList;
 begin
   dirs := FindAllDirectories(dir, False);
-  if dirs.Count > 1 then begin                                                    // A bit of sanitizing
+  if dirs.Count > 1 then begin                                                    // A bit of cleaning
     for i := (dirs.Count - 1) downto 0 do                                         // Keep last one(just in case...)
-        DeleteDirectory(dirs[i],False);                                           // Not sure about the downto will find out soon
+        DeleteDirectory(dirs[i],False);                                           // Will have to swap 0 & 1 here otherwise 0 will always be the first created and never modified
   end;
   dirs.Free;
 end;
 
-function my_CreatePathName: String;
+function my_CreatePathName(const base: String): String;
 var
-  base: String;
   dirs: TStringList;
   i: ShortInt;
 begin
-  base := Concat(GetCurrentDir, PathDelim,'assets', PathDelim);
-
   if not DirectoryExists(base) then
     CreateDir(base);
 
@@ -46,11 +41,11 @@ begin
   dirs.Free;
 end;
 
-function my_CreateFolder: String;
+function my_CreateFolder(const base: String): String;
 var
   cwd: String;
 begin
-  cwd := my_CreatePathName;
+  cwd := my_CreatePathName(base);
   if not DirectoryExists(cwd) then
     CreateDir(cwd);
     if DirectoryExists(cwd) then

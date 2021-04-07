@@ -1,0 +1,71 @@
+Do NOT read me!
+Do NOT read me!
+
+## WIP
+Trying to fix the Acquire.
+Why should i click away from the window to 'initiate' the scan ??
+
+
+## File management
+
+- [x] Create dirName
+- [x] Create CWD (folder for current session)
+- [x] SaveToFile
+- [x] Delete CWD
+- [ ] Keep last folder
+	- On Quit
+		- Delete `assets/0/\*.png`
+		- Move `assets/1/\*.png`	`assets/0/`
+	- On Open
+		- List all files .png in assets/0/ in the listBox
+
+
+
+## Twain
+#### Setup
+- [x] Load Library
+- [x] Load SourceManager
+
+#### Acquire
+## File management
+
+- [x] Create dirName
+- [x] Create CWD (folder for current session)
+- [x] SaveToFile
+- [x] Delete CWD
+- [ ] Keep last folder
+	- On Quit
+		- Delete `assets/0/\*.png`
+		- Move `assets/1/\*.png`	`assets/0/`
+	- On Open
+		- List all files .png in assets/0/ in the listBox
+
+
+
+## Twain
+#### Setup
+- [x] Load Library
+- [x] Load SourceManager
+
+#### Acquire
+- [x] Load Source
+- [x] Enable
+
+
+## UI
+- [ ] menuBar
+- [ ] Canvas
+- [ ] imageBox instead of listBox
+- [x] btnExit
+- [x] btnAcquire
+- [x] btnSave
+- [x] btnDelete
+	- [x] Preview mode
+	- [x] File mode
+- [ ] btnEdit
+	- [ ] Rotate
+	- [ ] Shrink/resize
+- [ ] Settings template
+	- [ ] Dropdown with all sources available
+	- [ ] Last DPI selected
+	- [ ] Last Transference mode selected
