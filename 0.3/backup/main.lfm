@@ -1,11 +1,13 @@
 object Form1: TForm1
-  Left = -1662
+  Left = 548
   Height = 864
-  Top = 106
-  Width = 884
+  Top = 64
+  Width = 883
   Caption = 'Form1'
   ClientHeight = 864
-  ClientWidth = 884
+  ClientWidth = 883
+  Constraints.MinHeight = 864
+  Constraints.MinWidth = 883
   DefaultMonitor = dmMainForm
   OnCreate = FormCreate
   Position = poDefault
@@ -25,11 +27,11 @@ object Form1: TForm1
     Left = 128
     Height = 760
     Top = 40
-    Width = 749
+    Width = 748
     Anchors = [akTop, akLeft, akRight, akBottom]
   end
   object srcLabel: TLabel
-    Left = 370
+    Left = 369
     Height = 20
     Top = 8
     Width = 159
@@ -51,7 +53,7 @@ object Form1: TForm1
     TabOrder = 1
   end
   object btnExit: TButton
-    Left = 677
+    Left = 676
     Height = 50
     Top = 808
     Width = 200
@@ -64,14 +66,14 @@ object Form1: TForm1
     Left = 0
     Height = 104
     Top = 40
-    Width = 128
+    Width = 127
     Anchors = [akLeft, akRight]
     ItemHeight = 0
     OnSelectionChange = listBoxSelectionChange
     TabOrder = 3
   end
   object btnDeleteImage: TButton
-    Left = 504
+    Left = 503
     Height = 50
     Top = 808
     Width = 100

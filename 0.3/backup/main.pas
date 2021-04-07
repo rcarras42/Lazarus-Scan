@@ -33,6 +33,7 @@ type
     CWD: String;
     IMAGEPATH: String;
     PREVIEW: Boolean;
+    ACQUIRED: ShortInt;
     Twain: TDelphiTwain;
 
     procedure TwainTwainAcquire(Sender: TObject; const {%H-}Index: Integer;
@@ -53,43 +54,59 @@ uses my_utils;
 
 procedure Tform1.Idle;
 begin
+  // Reset imgHoolder container
   imgHolder.Picture.Assign(nil);
   imgHolder.Proportional := True;
+  // Save and delete are only visible if a picture is loaded.
   btnSave.Visible := False;
   btnDeleteImage.Visible := False;
-  if listBox.Items.Count <> 0 then
-    listBox.Visible := True
-    else
+  // Update buttons's visibility according to our listBox
+  if listBox.Items.Count > 0 then begin
+    listBox.Visible := True;
+    btnValidate.Visible := True;
+    end else begin
       listBox.Visible := False;
+      btnValidate.Visible := False;
+    end;
 end;
 
 
 procedure TForm1.listBoxSelectionChange(Sender: TObject; User: boolean);
 begin
+  // Set mode to NOT PREVIEW (uses in Delete image procedure)
   PREVIEW := False;
+  // Set IMAGEPATH according to our selection in the list (uses in Save/Delete image procedure)
   IMAGEPATH := Concat(
   CWD, pathDelim, listBox.GetSelectedText, '.png');
+  // Update imgHolder with our selected item
   imgHolder.Picture.Assign(nil);
   imgHolder.Picture.LoadFromFile(IMAGEPATH);
+  // Update utility button(s)'s visibility
   btnDeleteImage.Visible := True;
+
   imgHolder.Refresh;
 end;
 
 procedure TForm1.btnAcquireClick(Sender: TObject);
 begin
+  // Reset imgHolder
   Idle;
-  try
-    if not Twain.Source[Twain.SelectedSource.Index].Loaded then
-      Twain.Source[Twain.SelectedSource.Index].Loaded := True;
-  finally                                                                        // Something wrong is happening here..
-    Twain.Source[Twain.SelectedSource.Index].ShowUI := False;
-    Twain.Source[Twain.SelectedSource.Index].Enabled := True;                    // WTF IS GOING ON HERE ??
+  // Load Twain
+  Twain.SelectedSource.Loaded := True;
+  // Disable UI
+  Twain.SelectedSource.ShowUI := False;
+  // Acquire
+  Twain.SelectedSource.Enabled := True;
 
-    btnSave.Visible := True;
+  // Set mode to PREVIEW
+  PREVIEW := True;
 
-    PREVIEW := True;
-    btnDeleteImage.Visible := True;
-  end;
+  // Pop out primary control buttons
+  btnSave.Visible := True;
+  btnDeleteImage.Visible := True;
+
+  // Debug purpose only
+  ACQUIRED := ACQUIRED + 1;
 end;
 
 procedure TForm1.btnDeleteImageClick(Sender: TObject);
@@ -132,7 +149,7 @@ procedure TForm1.btnValidateClick(Sender: TObject);
 begin
   // Sending the folder's path filled with image(s) as PNG format.
 
-  if listBox.Items.Count <> 0 then
+  if listBox.Items.Count > 0 then
       Result := CWD
       else
           ShowMessage('Nothing to send!');
@@ -158,6 +175,7 @@ begin
     //Load source manager
     Twain.SourceManagerLoaded := True;
     Twain.SelectSource;                                                          // Have to be replaced with a default select on Twain.Source[0] and a scrollbar if multiples scanners are available on the network
+    // Load source here even if it's unecessary because we want to know the status of the scanner
     Twain.SelectedSource.Loaded := True;
   finally                                                                        // Keep in mind
     if Twain.Source[Twain.SelectedSource.Index].Loaded then begin                // Here Twain.SelectedSource.Loaded returns True even if the scanner is unpowered cuz the Source is Loaded (drivers are installed and up & runnin)

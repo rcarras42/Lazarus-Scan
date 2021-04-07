@@ -1,6 +1,7 @@
 Do NOT read me!
 
 ## WIP
+#### Bugs
 Trying to fix the Acquire.
 Why should i click away from the window to 'initiate' the scan ??
 
@@ -46,3 +47,4 @@ Why should i click away from the window to 'initiate' the scan ??
 	- [ ] Dropdown with all sources available
 	- [ ] Last DPI selected
 	- [ ] Last Transfer mode selected
+- [ ] Update the srcLabel in runtime 
