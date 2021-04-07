@@ -1,5 +1,4 @@
 Do NOT read me!
-Do NOT read me!
 
 ## WIP
 Trying to fix the Acquire.
@@ -68,4 +67,4 @@ Why should i click away from the window to 'initiate' the scan ??
 - [ ] Settings template
 	- [ ] Dropdown with all sources available
 	- [ ] Last DPI selected
-	- [ ] Last Transference mode selected
+	- [ ] Last Transfer mode selected
