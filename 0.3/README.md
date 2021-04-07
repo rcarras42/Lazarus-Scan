@@ -19,28 +19,6 @@ Why should i click away from the window to 'initiate' the scan ??
 		- List all files .png in assets/0/ in the listBox
 
 
-
-## Twain
-#### Setup
-- [x] Load Library
-- [x] Load SourceManager
-
-#### Acquire
-## File management
-
-- [x] Create dirName
-- [x] Create CWD (folder for current session)
-- [x] SaveToFile
-- [x] Delete CWD
-- [ ] Keep last folder
-	- On Quit
-		- Delete `assets/0/\*.png`
-		- Move `assets/1/\*.png`	`assets/0/`
-	- On Open
-		- List all files .png in assets/0/ in the listBox
-
-
-
 ## Twain
 #### Setup
 - [x] Load Library
