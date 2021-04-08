@@ -1,0 +1,107 @@
+object Form1: TForm1
+  Left = 548
+  Height = 864
+  Top = 64
+  Width = 883
+  Caption = 'Form1'
+  ClientHeight = 0
+  ClientWidth = 0
+  Constraints.MaxHeight = 864
+  Constraints.MaxWidth = 883
+  Constraints.MinHeight = 864
+  Constraints.MinWidth = 883
+  DefaultMonitor = dmMainForm
+  OnCreate = FormCreate
+  Position = poDefault
+  LCLVersion = '2.0.12.0'
+  object btnAcquire: TButton
+    Left = 128
+    Height = 50
+    Top = 808
+    Width = 200
+    Anchors = [akBottom]
+    Caption = 'Nouvelle Numerisation'
+    Enabled = False
+    OnClick = btnAcquireClick
+    TabOrder = 0
+  end
+  object imgHolder: TImage
+    Left = 128
+    Height = 760
+    Top = 40
+    Width = 748
+    Anchors = [akTop, akLeft, akRight, akBottom]
+  end
+  object lblSource: TLabel
+    Left = 369
+    Height = 20
+    Top = 8
+    Width = 159
+    Anchors = [akTop]
+    Caption = 'Scanner non connecter'
+    Font.Height = 20
+    Font.Style = [fsBold, fsUnderline]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnSave: TButton
+    Left = 384
+    Height = 50
+    Top = 808
+    Width = 100
+    Anchors = [akBottom]
+    Caption = 'Sauvegarder'
+    OnClick = btnSaveClick
+    TabOrder = 1
+  end
+  object btnExit: TButton
+    Left = 676
+    Height = 50
+    Top = 808
+    Width = 200
+    Anchors = [akBottom]
+    Caption = '&Quit'
+    OnClick = btnExitClick
+    TabOrder = 2
+  end
+  object listBox: TListBox
+    Left = 0
+    Height = 104
+    Top = 40
+    Width = 127
+    Anchors = [akLeft, akRight]
+    ItemHeight = 0
+    OnSelectionChange = listBoxSelectionChange
+    TabOrder = 3
+  end
+  object btnDeleteImage: TButton
+    Left = 503
+    Height = 50
+    Top = 808
+    Width = 100
+    Anchors = [akBottom]
+    Caption = 'Supprimer'
+    OnClick = btnDeleteImageClick
+    TabOrder = 4
+    Visible = False
+  end
+  object btnValidate: TButton
+    Left = 24
+    Height = 25
+    Top = 608
+    Width = 75
+    Caption = 'Valider'
+    OnClick = btnValidateClick
+    TabOrder = 5
+  end
+  object cbScanSettings: TComboBox
+    Left = 8
+    Height = 23
+    Top = 400
+    Width = 100
+    ItemHeight = 15
+    OnChange = cbScanSettingsChange
+    TabOrder = 6
+    Text = 'cbScanSettings'
+  end
+end

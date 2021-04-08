@@ -20,7 +20,7 @@ type
     btnValidate: TButton;
     imgHolder: TImage;
     listBox: TListBox;
-    srcLabel: TLabel;
+    lblSource: TLabel;
     procedure btnAcquireClick(Sender: TObject);
     procedure btnDeleteImageClick(Sender: TObject);
     procedure btnExitClick(Sender: TObject);
@@ -179,11 +179,11 @@ begin
     Twain.SelectedSource.Loaded := True;
   finally                                                                        // Keep in mind
     if Twain.Source[Twain.SelectedSource.Index].Loaded then begin                // Here Twain.SelectedSource.Loaded returns True even if the scanner is unpowered cuz the Source is Loaded (drivers are installed and up & runnin)
-      srcLabel.Caption := Twain.SelectedSource.ProductName;                      // Were Twain.Source[SelectedSource.Index].Loaded is not
+      lblSource.Caption := Twain.SelectedSource.ProductName;                      // Were Twain.Source[SelectedSource.Index].Loaded is not
       btnAcquire.Enabled := True;
     end;
   end;
-  srcLabel.Visible := True;
+  lblSource.Visible := True;
   Idle;
 end;
 
