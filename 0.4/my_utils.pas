@@ -100,9 +100,14 @@ begin
     dstTmp := FindAllFiles(dst, '*.png');
     if dstTmp.Count <> srcTmp.Count then
       Result := False
-    else
+    else begin
       Result := True;
+      DeleteDirectory(src);
+    end;
   end;
+  srcTmp.Free;
+  dstTmp.Free;
+  ageList.Free;
 end.
 
 
