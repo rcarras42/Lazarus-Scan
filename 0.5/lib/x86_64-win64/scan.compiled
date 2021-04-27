@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="D:\App\lazarus\fpc\3.2.0\bin\x86_64-win64\fpc.exe" Date="1381340986"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -FiD:\dev\Lazarus-Scan\0.5\lib\x86_64-win64 -FuD:\App\lazarus\lcl\units\x86_64-win64\win32 -FuD:\App\lazarus\lcl\units\x86_64-win64 -FuD:\App\lazarus\components\lazutils\lib\x86_64-win64 -FuD:\App\lazarus\packager\units\x86_64-win64 -FuD:\dev\Lazarus-Scan\0.5\ -FUD:\dev\Lazarus-Scan\0.5\lib\x86_64-win64\ -FED:\dev\Lazarus-Scan\0.5\ -oD:\dev\Lazarus-Scan\0.5\scan.exe -dLCL -dLCLwin32 scan.lpr"/>
+</CONFIG>
